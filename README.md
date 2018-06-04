@@ -1,5 +1,6 @@
 # project_first
 school project rock&amp;paper&amp;scissors
+データバックアップとして利用しています。
 
 # 素材利用
 ・キャラクターやマップチップ：ぴぽや様　http://piposozai.blog76.fc2.com/  

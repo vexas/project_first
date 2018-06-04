@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+	    function doPreview() {
+	        var canvas = document.getElementById("canvas");
+	        var ctx = canvas.getContext("2d");
+
+			var imglist = [
+				'./soldier_02walk0000.png',
+				'./soldier_02walk0001.png',
+				'./soldier_02walk0002.png',
+				'./soldier_02walk0003.png',
+				'./soldier_02walk0004.png',
+				'./soldier_02walk0005.png',
+				'./soldier_02walk0006.png',
+				'./soldier_02walk0007.png',
+				'./soldier_02walk0008.png',
+				'./soldier_02walk0009.png',
+				'./soldier_02walk0010.png',
+				'./soldier_02walk0011.png',
+				'./soldier_02walk0012.png',
+				'./soldier_02walk0013.png',
+				'./soldier_02walk0014.png',
+				'./soldier_02walk0015.png',
+				'./soldier_02walk0016.png',
+				'./soldier_02walk0017.png',
+				'./soldier_02walk0018.png',
+				'./soldier_02walk0019.png',
+				'./soldier_02walk0020.png',
+				'./soldier_02walk0021.png',
+				'./soldier_02walk0022.png',
+				'./soldier_02walk0023.png',
+				'./soldier_02walk0024.png',
+				'./soldier_02walk0025.png',
+				'./soldier_02walk0026.png',
+				'./soldier_02walk0027.png',
+				'./soldier_02walk0028.png',
+
+			];
+			
+			var imglistsize = imglist.length;
+			var img = new Array(imglistsize);
+			for ( var i = 0 ; i < imglistsize ; i++ )
+			{
+				img[i] = new Image();
+				img[i].src = imglist[i];
+			}
+			
+			var cnt = 0;
+	        setInterval(function () {
+	            ctx.save();
+	            ctx.clearRect(-480, -480, 480 * 2, 480 * 2);
+				ctx.drawImage( img[cnt] , 0 , 0 );
+	            ctx.restore();
+				cnt++;
+				if (cnt >= imglistsize ) cnt = 0;
+	        }, 33);
+
+	    };
+	</script>
+</head>
+
+<body onLoad="doPreview()">
+    <div id="Screen" style="font-size:8px;text-align:center;"></div>
+	<canvas id="canvas" width="480" height="480">
+	</canvas>
+</body>
+
+</html>

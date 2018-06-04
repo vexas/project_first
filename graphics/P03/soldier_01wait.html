@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+	    function doPreview() {
+	        var canvas = document.getElementById("canvas");
+	        var ctx = canvas.getContext("2d");
+
+			var imglist = [
+				'./soldier_01wait0000.png',
+				'./soldier_01wait0001.png',
+				'./soldier_01wait0002.png',
+				'./soldier_01wait0003.png',
+				'./soldier_01wait0004.png',
+				'./soldier_01wait0005.png',
+				'./soldier_01wait0006.png',
+				'./soldier_01wait0007.png',
+				'./soldier_01wait0008.png',
+				'./soldier_01wait0009.png',
+				'./soldier_01wait0010.png',
+				'./soldier_01wait0011.png',
+				'./soldier_01wait0012.png',
+				'./soldier_01wait0013.png',
+				'./soldier_01wait0014.png',
+				'./soldier_01wait0015.png',
+				'./soldier_01wait0016.png',
+				'./soldier_01wait0017.png',
+				'./soldier_01wait0018.png',
+				'./soldier_01wait0019.png',
+				'./soldier_01wait0020.png',
+				'./soldier_01wait0021.png',
+				'./soldier_01wait0022.png',
+				'./soldier_01wait0023.png',
+				'./soldier_01wait0024.png',
+				'./soldier_01wait0025.png',
+				'./soldier_01wait0026.png',
+				'./soldier_01wait0027.png',
+				'./soldier_01wait0028.png',
+
+			];
+			
+			var imglistsize = imglist.length;
+			var img = new Array(imglistsize);
+			for ( var i = 0 ; i < imglistsize ; i++ )
+			{
+				img[i] = new Image();
+				img[i].src = imglist[i];
+			}
+			
+			var cnt = 0;
+	        setInterval(function () {
+	            ctx.save();
+	            ctx.clearRect(-480, -480, 480 * 2, 480 * 2);
+				ctx.drawImage( img[cnt] , 0 , 0 );
+	            ctx.restore();
+				cnt++;
+				if (cnt >= imglistsize ) cnt = 0;
+	        }, 33);
+
+	    };
+	</script>
+</head>
+
+<body onLoad="doPreview()">
+    <div id="Screen" style="font-size:8px;text-align:center;"></div>
+	<canvas id="canvas" width="480" height="480">
+	</canvas>
+</body>
+
+</html>
